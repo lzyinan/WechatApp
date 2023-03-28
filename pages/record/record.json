@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "重要时间记录",
+  "usingComponents": {
+    "van-calendar": "@vant/weapp/calendar/index",
+    "van-notice-bar": "@vant/weapp/notice-bar/index"
+  }
+}

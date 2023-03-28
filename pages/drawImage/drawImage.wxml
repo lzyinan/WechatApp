@@ -1,0 +1,23 @@
+<view class="containerbody">
+  <view class="form-group">
+    <text>图片描述：</text>
+    <textarea bindinput="onInput" placeholder="请输入图片描述"></textarea>
+  </view>
+  <view class="form-group">
+    <text>图片大小：</text>
+    <picker mode="selector" range="{{sizes}}" value="{{index}}" bindchange="onSizeChange">
+      <view class="picker">{{sizes[sizeIndex]}}</view>
+    </picker>
+  </view>
+  <view class="form-group">
+    <text>图片数量：</text>
+    <picker mode="selector" range="{{numbers}}" bindchange="onNumberChange">
+      <view class="picker">{{numbers[numberIndex]}}</view>
+    </picker>
+  </view>
+  <button class="btn-generate" bindtap="onGenerate">生成图片</button>
+
+  <view wx:for="{{imageUrlArray}}" wx:key="index">
+    <image src="{{loading[index] ? '/images/loading.gif' : item}}" bindload="onImageLoad" data-source="{{item}}" data-idx="{{index}}" bindtap="onImageTap"></image>
+  </view>
+</view>

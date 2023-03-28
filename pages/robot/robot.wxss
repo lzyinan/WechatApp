@@ -1,0 +1,122 @@
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chat-box {
+  flex: 1;
+  padding: 5%;
+  width: 90%;
+  margin-bottom: 80px;
+}
+
+.chat-item {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.avatar {
+  min-width: 40px;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.mine {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.mine .content {
+  background-color: #4e8cff;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.other .content {
+  background-color: #f2f2f2;
+  color: #333;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.input-box {
+  display: flex;
+  flex-shrink: 0; /* 设置flex-shrink为0，防止input-box缩小 */
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+
+.input {
+  flex: 1;
+  height: 40px;
+  border-radius: 20px;
+  padding: 10px;
+  border: none;
+  background-color: #fff;
+}
+
+.send-btn {
+  width: 80px;
+  height: 35px;
+  margin-left: 10px;
+  border-radius: 20px;
+  background-color: #4e8cff;
+  color: #fff;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-voice {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10rpx;
+  background-color: #ddd;
+  border-radius: 10rpx;
+}
+
+.chat-voice-icon {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #bbb;
+}
+
+.chat-speak-icon {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #4e8cff79;
+}
+
+.chat-voice-image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.chat-voice-duration {
+  margin-left: 10rpx;
+  font-size: 24rpx;
+}
