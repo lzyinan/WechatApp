@@ -1,5 +1,5 @@
 <!--pages/record/record.wxml-->
-<!-- <van-notice-bar left-icon="volume-o" mode="closeable" text="又是一月勤劳时，注意保暖，多喝热水！！！" /> -->
+<van-notice-bar left-icon="volume-o" wrapable text="距离最近的节假日{{holidayList[0].name}}：{{holidayList[0].countDown}}" />
 <view class="container log-list">
   <van-button type="primary" bind:click="onDisplay">添加记录</van-button>
   <block wx:for="{{logs}}" wx:key="timeStamp" wx:for-item="log">
@@ -10,3 +10,4 @@
   <!-- <button bindtap="addRecord">添加记录</button> -->
   <van-calendar show="{{ show }}"  min-date="{{minDate}}" bind:close="onClose" bind:confirm="onConfirm" />
 </view>
+

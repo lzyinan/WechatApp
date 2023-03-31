@@ -6,7 +6,8 @@
     "pages/record/record",
     "pages/makeDecision/makeDecision",
     "pages/makeDecision/takeone",
-    "pages/drawImage/drawImage"
+    "pages/drawImage/drawImage",
+    "pages/games/2048/2048"
   ],
   "window": {
     "backgroundTextStyle": "light",

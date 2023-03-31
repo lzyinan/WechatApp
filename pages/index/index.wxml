@@ -9,8 +9,9 @@
       <van-grid column-num="2" gutter="10" style="margin-top: 50px;">
        <van-grid-item icon="contact" text="语音助手" url="/pages/robot/robot"/>
        <van-grid-item icon="notes-o" text="时间记录" url="/pages/record/record"/>
-       <van-grid-item icon="smile-o" text="做个决定" url="/pages/makeDecision/makeDecision"/>
+       <van-grid-item icon="completed" text="做个决定" url="/pages/makeDecision/makeDecision"/>
        <van-grid-item icon="photo-o" text="AI绘图" url="/pages/drawImage/drawImage"/>
+       <van-grid-item icon="smile-o" text="2048" url="/pages/games/2048/2048"/>
       </van-grid>
     </block>
     <block wx:elif="{{!hasUserInfo}}">
