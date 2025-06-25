@@ -1,0 +1,67 @@
+<view class="page">
+
+<!-- 添加参与人 -->
+<view class="card">
+  <view class="section-title">添加参与人</view>
+  <view class="form-row">
+    <input class="input" placeholder="请输入姓名" bindinput="onInputPlayer" value="{{newPlayer}}" />
+    <button class="btn-small" size="mini" bindtap="addPlayer">添加</button>
+  </view>
+
+  <view wx:if="{{players.length}}" class="tag-group">
+    <block wx:for="{{players}}" wx:key="name">
+      <view class="tag">{{item}}</view>
+    </block>
+  </view>
+</view>
+
+<!-- 金额记录 -->
+<view wx:if="{{players.length}}" class="card">
+  <view class="section-title">第 {{rounds.length + 1}} 局 金额记录</view>
+  <block wx:for="{{players}}" wx:key="name">
+    <view class="form-row">
+      <text class="label">{{item}}：</text>
+      <input class="input" type="number" placeholder="输入金额" data-name="{{item}}" bindinput="onInputAmount"/>
+    </view>
+  </block>
+  <button class="btn-block" bindtap="submitRound">添加本局记录</button>
+</view>
+
+<!-- 所有局记录 -->
+<view class="card rounds-container" wx:if="{{rounds.length}}">
+  <view class="section-title">所有记录（共 {{rounds.length}} 局）<button size="mini" class="btn-clear" bindtap="clearAll">清空</button>
+  </view>
+
+  <block wx:for="{{rounds}}" wx:key="index">
+    <view class="round-item">
+      <view class="round-title">第 {{rounds.length - index}} 局</view>
+      <view class="round-records">
+        <block wx:for="{{item}}" wx:key="name">
+          <view class="record-chip">
+            <text>{{item.name}}：</text>
+            <text class="{{item.amount > 0 ? 'positive' : (item.amount < 0 ? 'negative' : '')}}">{{item.amount}} 元</text>
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+  <button class="btn-primary" bindtap="settle">结算</button>
+</view>
+
+<!-- 结算结果 -->
+<view wx:if="{{result.length}}" class="card">
+  <view class="section-title">结算结果</view>
+  <block wx:for="{{result}}" wx:key="name">
+    <view>
+      {{item.name}}：
+      <text class="{{item.amount > 0 ? 'positive' : (item.amount < 0 ? 'negative' : '')}}">
+        {{item.amount}} 元
+      </text>
+    </view>
+  </block>
+  <button class="btn-block green" bindtap="drawBill">生成账单截图</button>
+</view>
+  <!-- 隐藏 canvas 绘图区 -->
+  <canvas canvas-id="billCanvas" style="width: 500px; height: 600px; position: absolute; left: -9999px;" />
+
+</view>

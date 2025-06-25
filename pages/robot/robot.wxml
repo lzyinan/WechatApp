@@ -1,0 +1,28 @@
+<view class="chat-container">
+  <scroll-view class="chat-box" scroll-y="true" scroll-into-view="{{toView}}" scroll-with-animation>
+    <view wx:for="{{chatList}}" wx:key="index" class="chat-item">
+      <image class="avatar" src="{{item.owner == 'mine' ? '/pages/robot/images/guest.png' : '/pages/robot/images/rebot.png'}}"></image>
+      <view class="{{item.owner == 'mine' ? 'mine' : 'other'}}">
+        <view wx:if="{{item.type == 'text'}}">
+          <view class="content"><text user-select='true'>{{item.content}}</text></view>
+        </view>
+        <view wx:else>
+          <view class="chat-voice">
+            <view class="chat-voice-icon" bindtap="playVoice" data-src="{{item.content}}">
+              <image class="chat-voice-image" src="/pages/robot/images/audio-notplay.png"></image>
+            </view>
+            <view class="chat-voice-duration">{{item.duration}}"</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view id="toView"></view>
+  </scroll-view>
+  <view class="input-box">
+    <view class="chat-speak-icon" bindtouchstart="startRecord" bindtouchend="stopRecord">
+      <image class="chat-voice-image" src="/pages/robot/images/speak.png"></image>
+    </view>
+    <input class="input" placeholder="请输入消息" bindinput="inputChange" bindpaste="onPaste" bindconfirm="sendMessage" value="{{inputValue}}" confirm-type="send"></input>
+    <button class="send-btn" bindtap="sendMessage">发送</button>
+  </view>
+</view>

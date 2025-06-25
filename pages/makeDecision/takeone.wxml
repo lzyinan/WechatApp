@@ -1,0 +1,9 @@
+<van-cell-group title="选项内容" >
+  <block wx:for="{{options}}" wx:key="key" wx:for-item="option">
+    <van-cell title="{{option}}" value=""/>
+  </block>
+</van-cell-group>
+<view class="container">
+  <van-dialog id="van-dialog" />
+  <button bindtap="startDrawing">{{isDrawing ? '决定中...' : '帮我做个决定'}}</button>
+</view>

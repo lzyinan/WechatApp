@@ -1,0 +1,25 @@
+<block wx:if="{{isAdd}}">
+  <van-toast id="van-toast" />
+  <van-popup show="{{ show }}" position="top" custom-style="height: 20%;" bind:close="onClose">
+  <van-field label="名称" placeholder="给决定起个名字吧" clearable="true" show-word-limit="true" maxlength="10" bindinput="changeName"/>
+  <van-button type="info" bindtap="saveMdMap" style="margin:20% 40%">OK</van-button>
+  </van-popup>
+  <van-cell-group title="来加个选择吧" >
+  <block wx:for="{{options}}" wx:key="idx">
+    <van-field label="选项{{index+1}}" placeholder="请输入选择内容" show-word-limit="true" data-idx="{{index}}" maxlength="10" bindinput="change"/>
+    </block>
+  </van-cell-group>
+
+  <view class="container">
+  <van-button icon="plus" type="primary" bindtap="addTab">加个选择</van-button>
+  <van-button icon="success" type="info" bindtap="showPopup" style="margin-top:20px">保存决定</van-button>
+  </view>
+</block>
+<block wx:else>
+<van-cell-group title="以前做过的决定" >
+  <block wx:for="{{tabs}}" wx:key="timeStamp" wx:for-item="tab">
+    <van-cell title="{{tab}}" value="" is-link data-key="{{tab}}" url="/pages/makeDecision/takeone?key={{tab}}"/>
+  </block>
+</van-cell-group>
+<view class="container"><van-button icon="plus" type="primary" bindtap="addMdMap">来个新的</van-button></view>
+</block>

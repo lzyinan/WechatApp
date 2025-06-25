@@ -1,0 +1,36 @@
+/* pages/record/record.wxss */
+@import '../../vant.wxss';
+.log-list {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+}
+.log-item {
+  letter-spacing: 2px;
+  margin: 10rpx; 
+}
+
+.table {
+  width: 80%;
+  margin-top: 30rpx;
+  border: 1rpx solid #ddd;
+  border-collapse: collapse;
+}
+
+.table td,
+.table th {
+  border: 1rpx solid #ddd;
+  padding: 10rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+
+.timer {
+  font-size: 48rpx;
+  margin-top: 50rpx;
+  color: #333;
+}

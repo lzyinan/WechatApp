@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.turntable {
+  position: relative;
+  width: 400rpx;
+  height: 400rpx;
+  margin-bottom: 50rpx;
+}
+
+.turntable-bg {
+  width: 400rpx;
+  height: 400rpx;
+}
+
+.turntable-item {
+  position: absolute;
+  width: 400rpx;
+  height: 400rpx;
+  background-color: #feca57;
+  border-radius: 50%;
+  box-shadow: 0 4rpx 4rpx rgba(0, 0, 0, 0.1);
+  transform-origin: 50% 100%;
+  transition: transform 5s ease-out;
+}
+
+.turntable-item:nth-child(odd) {
+  background-color: #ff6b6b;
+}
+
+.turntable-item:nth-child(1) {
+  transform: rotate(0deg);
+}
+
+.turntable-item:nth-child(2) {
+  transform: rotate(60deg);
+}
+
+.turntable-item:nth-child(3) {
+  transform: rotate(120deg);
+}
+
+.turntable-item:nth-child(4) {
+  transform: rotate(180deg);
+}
+
+.turntable-item:nth-child(5) {
+  transform: rotate(240deg);
+}
+
+.turntable-item:nth-child(6) {
+  transform: rotate(300deg);
+}
+
+.turntable-pointer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: -50rpx;
+  margin-left: -50rpx;
+  z-index: 2;
+}
+.van-dialog{background-color:var(--dialog-background-color,#fff);border-radius:var(--dialog-border-radius,16px);font-size:var(--dialog-font-size,16px);overflow:hidden;top:45%!important;width:var(--dialog-width,320px)}@media (max-width:321px){.van-dialog{width:var(--dialog-small-screen-width,90%)}}.van-dialog__header{font-weight:var(--dialog-header-font-weight,500);line-height:var(--dialog-header-line-height,24px);padding-top:var(--dialog-header-padding-top,24px);text-align:center}.van-dialog__header--isolated{padding:var(--dialog-header-isolated-padding,24px 0)}.van-dialog__message{-webkit-overflow-scrolling:touch;font-size:var(--dialog-message-font-size,14px);line-height:var(--dialog-message-line-height,20px);max-height:var(--dialog-message-max-height,60vh);overflow-y:auto;padding:var(--dialog-message-padding,24px);text-align:center}.van-dialog__message-text{word-wrap:break-word}.van-dialog__message--hasTitle{color:var(--dialog-has-title-message-text-color,#646566);padding-top:var(--dialog-has-title-message-padding-top,8px)}.van-dialog__message--round-button{color:#323233;padding-bottom:16px}.van-dialog__message--left{text-align:left}.van-dialog__message--right{text-align:right}.van-dialog__message--justify{text-align:justify}.van-dialog__footer{display:flex}.van-dialog__footer--round-button{padding:8px 24px 16px!important;position:relative!important}.van-dialog__button{flex:1}.van-dialog__cancel,.van-dialog__confirm{border:0!important}.van-dialog-bounce-enter{opacity:0;transform:translate3d(-50%,-50%,0) scale(.7)}.van-dialog-bounce-leave-active{opacity:0;transform:translate3d(-50%,-50%,0) scale(.9)}

@@ -1,0 +1,13 @@
+<!--pages/record/record.wxml-->
+<van-notice-bar left-icon="volume-o" wrapable text="距离最近的节假日{{holidayList[0].name}}：{{holidayList[0].countDown}}" />
+<view class="container log-list">
+  <van-button type="primary" bind:click="onDisplay">添加记录</van-button>
+  <block wx:for="{{logs}}" wx:key="timeStamp" wx:for-item="log">
+    <rich-text class="log-item">{{index + 1}}.<span></span>{{log.date}} 
+      <icon type="cancel" size="15" data-index="{{index}}" bindtap="delRecord"></icon>
+    </rich-text>
+  </block>
+  <!-- <button bindtap="addRecord">添加记录</button> -->
+  <van-calendar show="{{ show }}"  min-date="{{minDate}}" bind:close="onClose" bind:confirm="onConfirm" />
+</view>
+
