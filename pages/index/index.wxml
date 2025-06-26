@@ -11,7 +11,7 @@
        <van-grid-item icon="notes-o" text="时间记录" url="/pages/record/record"/>
        <van-grid-item icon="completed" text="做个决定" url="/pages/makeDecision/makeDecision"/>
        <van-grid-item icon="photo-o" text="AI绘图" url="/pages/drawImage/drawImage"/>
-       <van-grid-item icon="smile-o" text="2048" url="/pages/games/2048/2048"/>
+       <van-grid-item icon="smile-o" text="数和模拟" url="/pages/games/2048/2048"/>
        <van-grid-item icon="balance-list-o" text="记账管理" url="/pages/bookkeeping/bookkeeping"/>
       </van-grid>
     </block>
